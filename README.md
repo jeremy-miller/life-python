@@ -1,2 +1,2 @@
-# life-python
-Implementation of Conway's Game of Life in Python
+# Life
+Implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in Python.
