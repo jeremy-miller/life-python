@@ -27,25 +27,25 @@ class LifeClass(object):
 
   def rules(self, grid, height, width):
     new_grid = [[False for x in range(height)] for x in range(width)]
-    for row in range(len(grid)-1):
-      for column in range(len(grid[row])-1):
+    for row in range(len(grid)):
+      for column in range(len(grid[row])):
         live_neighbors = 0
 
         if row-1 >= 0 and column-1 >= 0 and grid[row-1][column-1]:
           live_neighbors += 1
         if row-1 >= 0 and column >= 0 and grid[row-1][column]:
           live_neighbors += 1
-        if row-1 >= 0 and column+1 <= width and grid[row-1][column+1]:
+        if row-1 >= 0 and column+1 < width and grid[row-1][column+1]:
           live_neighbors += 1
         if column-1 >= 0 and grid[row][column-1]:
           live_neighbors += 1
-        if column+1 >= width and grid[row][column+1]:
+        if column+1 < width and grid[row][column+1]:
           live_neighbors += 1
-        if row+1 >= height and column-1 >= 0 and grid[row+1][column-1]:
+        if row+1 < height and column-1 >= 0 and grid[row+1][column-1]:
           live_neighbors += 1
-        if row+1 >= height and column >= 0 and grid[row+1][column]:
+        if row+1 < height and column >= 0 and grid[row+1][column]:
           live_neighbors += 1
-        if row+1 >= height and column+1 >= width and grid[row+1][column+1]:
+        if row+1 < height and column+1 < width and grid[row+1][column+1]:
           live_neighbors += 1
 
         if grid[row][column] and live_neighbors < 2:
