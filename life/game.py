@@ -1,18 +1,15 @@
 import logging
 import numpy
+from life.configuration import ConfigurationClass
+from life.patterns import PatternsClass
 
 
 class GameClass(object):
-  def __init__(self, rows, columns):
-    self._max_rows = rows
-    self._max_columns = columns
-    self._grid = numpy.zeros((self._max_rows, self._max_columns), dtype=numpy.int)
-
-  def blinker(self):
-    logging.debug('Setting initial grid configuration: blinker')
-    self._grid[2][1] = 1
-    self._grid[2][2] = 1
-    self._grid[2][3] = 1
+  def __init__(self):
+    configuration = ConfigurationClass().get_configuration()
+    self._max_rows = configuration['rows']
+    self._max_columns = configuration['columns']
+    self._grid = PatternsClass(configuration).get_configured_grid(configuration['starting_configuration'])
 
   def run(self):
     while True:
