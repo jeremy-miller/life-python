@@ -1,6 +1,7 @@
 import logging
 import numpy
 from life.configuration import ConfigurationClass
+from life.display import DisplayClass
 from life.patterns import PatternsClass
 
 
@@ -14,6 +15,7 @@ class GameClass(object):
   def run(self):
     while True:
       self._run_iteration()
+
 
   def _run_iteration(self):
     logging.debug('Running new iteration')

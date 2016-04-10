@@ -96,7 +96,7 @@ evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / stateme
 bad-functions=map,filter,input
 
 # Good variable names which should always be accepted, separated by a comma
-good-names=i,j,k,ex,Run,_
+good-names=i,j,k,ex,Run,_,f
 
 # Bad variable names which should always be refused, separated by a comma
 bad-names=foo,bar,baz,toto,tutu,tata
@@ -186,7 +186,7 @@ max-nested-blocks=5
 [FORMAT]
 
 # Maximum number of characters on a single line.
-max-line-length=100
+max-line-length=120
 
 # Regexp for a line that is allowed to be longer than the limit.
 ignore-long-lines=^\s*(# )?<?https?://\S+>?$
@@ -206,10 +206,10 @@ max-module-lines=1000
 
 # String used as indentation unit. This is usually "    " (4 spaces) or "\t" (1
 # tab).
-indent-string='    '
+indent-string='  '
 
 # Number of spaces of indent required inside a hanging  or continued line.
-indent-after-paren=4
+indent-after-paren=2
 
 # Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
 expected-line-ending-format=

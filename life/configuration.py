@@ -15,11 +15,11 @@ class ConfigurationClass(object):
 
   def _parse_yaml(self):
     filepath = join(dirname(realpath(__file__)), self._CONFIG_FILENAME)
-    logging.info('Loading and parsing {}'.format(self._CONFIG_FILENAME))
-    logging.debug('{} filepath: {}'.format(self._CONFIG_FILENAME, filepath))
+    logging.info('Loading and parsing %s', self._CONFIG_FILENAME)
+    logging.debug('%s filepath: %s', self._CONFIG_FILENAME, filepath)
     with open(filepath, 'r') as f:
       parsed_yaml = load(f)
-    logging.debug('Parsed yaml values: {}'.format(parsed_yaml))
+    logging.debug('Parsed yaml values: %s', parsed_yaml)
     return parsed_yaml
 
   def _validate_configuration(self):

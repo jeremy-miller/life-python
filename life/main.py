@@ -1,5 +1,4 @@
 import logging
-from sys import exit
 from life.logger import LoggerClass
 from life.game import GameClass
 

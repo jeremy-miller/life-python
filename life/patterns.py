@@ -1,6 +1,5 @@
 import logging
 import numpy
-from sys import exit
 
 
 class PatternsClass(object):
@@ -15,7 +14,7 @@ class PatternsClass(object):
     elif starting_configuration == 'r-pentomino':
       return self._set_r_pentomino()
     else:
-      logging.error('Invalid starting configuration: {}'.format(starting_configuration))
+      logging.error('Invalid starting configuration: %s', starting_configuration)
       exit(1)
 
   def _set_blinker(self):
