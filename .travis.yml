@@ -7,4 +7,5 @@ services:
 before_install:
   - docker build -t jeremymiller/life-python .
 script:
+  pylint life
   python -m unittest discover
