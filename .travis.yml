@@ -7,6 +7,4 @@ services:
 before_install:
   - docker build -t jeremymiller/life-python .
 script:
-  coverage run --source=life setup.py test
-after_success:
-  coveralls
+  python -m unittest discover
