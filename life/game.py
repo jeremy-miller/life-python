@@ -1,4 +1,5 @@
 import logging
+from time import sleep
 import numpy
 from life.configuration import ConfigurationClass
 from life.display import DisplayClass
@@ -10,16 +11,19 @@ class GameClass(object):
     configuration = ConfigurationClass().get_configuration()
     self._max_rows = configuration['rows']
     self._max_columns = configuration['columns']
+    self._delay = configuration['delay']
     patterns = PatternsClass(configuration)
     patterns.set_configured_grid(configuration['starting_configuration'])
     self._grid = patterns.grid
-    self._display = DisplayClass(configuration['delay'])
+    self._display = DisplayClass()
 
   def run(self):
     self._display.show(self._grid)  # display initial configuration
     while True:
       self._run_iteration()
       self._display.show(self._grid)
+      sleep(self._delay)  # sleep between iterations to improve user experience
+
 
   def _run_iteration(self):
     logging.debug('Running new iteration')
