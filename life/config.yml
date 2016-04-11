@@ -1,4 +1,4 @@
 ---
-rows: 5  # integer greater than 5
-columns: 5  # integer greater than 5
-starting_configuration: 'blinker'  # options are 'blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship'
+rows: 25  # integer greater than 5
+columns: 25  # integer greater than 5
+starting_configuration: 'lightweight_spaceship'  # options are 'blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship'

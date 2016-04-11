@@ -10,10 +10,13 @@ class GameClass(object):
     configuration = ConfigurationClass().get_configuration()
     self._max_rows = configuration['rows']
     self._max_columns = configuration['columns']
-    self._grid = PatternsClass(configuration).get_configured_grid(configuration['starting_configuration']).grid
+    patterns = PatternsClass(configuration)
+    patterns.set_configured_grid(configuration['starting_configuration'])
+    self._grid = patterns.grid
     self._display = DisplayClass()
 
   def run(self):
+    self._display.show(self._grid)  # display initial configuration
     while True:
       self._run_iteration()
       self._display.show(self._grid)

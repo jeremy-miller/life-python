@@ -6,21 +6,21 @@ class PatternsClass(object):
   def __init__(self, configuration):
     self.grid = numpy.zeros((configuration['rows'], configuration['columns']), dtype=numpy.int)
 
-  def get_configured_grid(self, starting_configuration):
+  def set_configured_grid(self, starting_configuration):
     if starting_configuration == 'blinker':
-      return self._set_blinker()
+      self._set_blinker()
     elif starting_configuration == 'glider':
-      return self._set_glider()
+      self._set_glider()
     elif starting_configuration == 'r-pentomino':
-      return self._set_r_pentomino()
+      self._set_r_pentomino()
     elif starting_configuration == 'toad':
-      return self._set_toad()
+      self._set_toad()
     elif starting_configuration == 'pulsar':
-      return self._set_pulsar()
+      self._set_pulsar()
     elif starting_configuration == 'pentadecathlon':
-      return self._set_pentadecathlon()
+      self._set_pentadecathlon()
     elif starting_configuration == 'lightweight_spaceship':
-      return self._set_lightweight_spaceship()
+      self._set_lightweight_spaceship()
     else:
       logging.error('Invalid starting configuration: %s', starting_configuration)
       exit(1)
@@ -108,26 +108,28 @@ class PatternsClass(object):
     self.grid[13][11] = 1
 
   def _set_pentadecathlon(self):
-    self.grid[1][3] = 1
-    self.grid[1][8] = 1
-    self.grid[2][1] = 1
-    self.grid[2][2] = 1
-    self.grid[2][4] = 1
-    self.grid[2][5] = 1
-    self.grid[2][6] = 1
-    self.grid[2][7] = 1
-    self.grid[2][9] = 1
-    self.grid[2][10] = 1
-    self.grid[3][1] = 1
-    self.grid[3][8] = 1
+    logging.debug('Setting initial grid configuration: pentadecathlon')
+    self.grid[4][5] = 1
+    self.grid[5][5] = 1
+    self.grid[6][4] = 1
+    self.grid[6][6] = 1
+    self.grid[7][5] = 1
+    self.grid[8][5] = 1
+    self.grid[9][5] = 1
+    self.grid[10][5] = 1
+    self.grid[11][4] = 1
+    self.grid[11][6] = 1
+    self.grid[12][5] = 1
+    self.grid[13][5] = 1
 
   def _set_lightweight_spaceship(self):
-    self.grid[1][2] = 1
-    self.grid[1][5] = 1
-    self.grid[2][1] = 1
+    logging.debug('Setting initial grid configuration: lightweight_spaceship')
+    self.grid[1][1] = 1
+    self.grid[1][4] = 1
+    self.grid[2][5] = 1
     self.grid[3][1] = 1
     self.grid[3][5] = 1
-    self.grid[4][1] = 1
     self.grid[4][2] = 1
     self.grid[4][3] = 1
     self.grid[4][4] = 1
+    self.grid[4][5] = 1
