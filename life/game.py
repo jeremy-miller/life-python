@@ -24,7 +24,6 @@ class GameClass(object):
       self._display.show(self._grid)
       sleep(self._delay)  # sleep between iterations to improve user experience
 
-
   def _run_iteration(self):
     logging.debug('Running new iteration')
     new_grid = numpy.copy(self._grid)  # rule 2
