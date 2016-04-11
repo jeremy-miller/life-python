@@ -5,22 +5,19 @@ import numpy
 class PatternsClass(object):
   def __init__(self, configuration):
     self.grid = numpy.zeros((configuration['rows'], configuration['columns']), dtype=numpy.int)
+    self._config_functions = {
+      'blinker': self._set_blinker,
+      'glider': self._set_glider,
+      'r-pentomino': self._set_r_pentomino,
+      'toad': self._set_toad,
+      'pulsar': self._set_pulsar,
+      'pentadecathlon': self._set_pentadecathlon,
+      'lightweight_spaceship': self._set_lightweight_spaceship
+    }
 
   def set_configured_grid(self, starting_configuration):
-    if starting_configuration == 'blinker':
-      self._set_blinker()
-    elif starting_configuration == 'glider':
-      self._set_glider()
-    elif starting_configuration == 'r-pentomino':
-      self._set_r_pentomino()
-    elif starting_configuration == 'toad':
-      self._set_toad()
-    elif starting_configuration == 'pulsar':
-      self._set_pulsar()
-    elif starting_configuration == 'pentadecathlon':
-      self._set_pentadecathlon()
-    elif starting_configuration == 'lightweight_spaceship':
-      self._set_lightweight_spaceship()
+    if starting_configuration in self._config_functions:
+      self._config_functions[starting_configuration]()
     else:
       logging.error('Invalid starting configuration: %s', starting_configuration)
       exit(1)
