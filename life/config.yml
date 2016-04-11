@@ -1,4 +1,4 @@
 ---
 rows: 5  # integer greater than 5
 columns: 5  # integer greater than 5
-starting_configuration: 'blinker'  # options are 'blinker', 'glider', 'r-pentomino
+starting_configuration: 'blinker'  # options are 'blinker', 'glider', 'r-pentomino'

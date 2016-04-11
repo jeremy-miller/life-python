@@ -11,11 +11,12 @@ class GameClass(object):
     self._max_rows = configuration['rows']
     self._max_columns = configuration['columns']
     self._grid = PatternsClass(configuration).get_configured_grid(configuration['starting_configuration'])
+    self._display = DisplayClass()
 
   def run(self):
     while True:
       self._run_iteration()
-
+      self._display.show(self._grid)
 
   def _run_iteration(self):
     logging.debug('Running new iteration')
