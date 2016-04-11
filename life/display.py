@@ -6,9 +6,9 @@ class DisplayClass(object):
 
   def show(self, grid):
     output = ''
-    for y, row in enumerate(grid):
-      for x, _ in enumerate(row):
-        if grid[y][x]:
+    for i, row in enumerate(grid):
+      for j, _ in enumerate(row):
+        if grid[i][j]:
           output += ' O'
         else:
           output += ' .'
