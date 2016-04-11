@@ -1,4 +1,5 @@
 ---
-rows: 20  # integer greater than 20
-columns: 20  # integer greater than 20
+rows: 20  # number of rows in the grid - integer greater than 20
+columns: 20  # number of columns in the grid - integer greater than 20
 starting_configuration: 'pentadecathlon'  # options are 'blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship'
+delay: 1  # number of seconds to wait between iterations - integer greater than 1

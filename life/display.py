@@ -3,7 +3,8 @@ from time import sleep
 
 
 class DisplayClass(object):
-  _DISPLAY_TIMEOUT = 1  # seconds
+  def __init__(self, delay):
+    self._delay = delay  # seconds
 
   def show(self, grid):
     output = ''
@@ -15,4 +16,4 @@ class DisplayClass(object):
       if index[1] == grid.shape[1] - 1:
         output += '\n'
     print(output)
-    sleep(self._DISPLAY_TIMEOUT)
+    sleep(self._delay)

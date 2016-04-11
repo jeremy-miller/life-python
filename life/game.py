@@ -13,7 +13,7 @@ class GameClass(object):
     patterns = PatternsClass(configuration)
     patterns.set_configured_grid(configuration['starting_configuration'])
     self._grid = patterns.grid
-    self._display = DisplayClass()
+    self._display = DisplayClass(configuration['delay'])
 
   def run(self):
     self._display.show(self._grid)  # display initial configuration
