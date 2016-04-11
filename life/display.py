@@ -1,3 +1,4 @@
+import numpy
 from time import sleep
 
 
@@ -6,12 +7,12 @@ class DisplayClass(object):
 
   def show(self, grid):
     output = ''
-    for i, row in enumerate(grid):
-      for j, _ in enumerate(row):
-        if grid[i][j]:
-          output += ' O'
-        else:
-          output += ' .'
-      output += '\n'
+    for index, value in numpy.ndenumerate(grid):
+      if value:
+        output += ' O'
+      else:
+        output += ' .'
+      if index[1] == grid.shape[1] - 1:
+        output += '\n'
     print(output)
     sleep(self._DISPLAY_TIMEOUT)
