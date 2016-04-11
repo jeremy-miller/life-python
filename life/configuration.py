@@ -30,12 +30,12 @@ class ConfigurationClass(object):
     assert isinstance(self._configuration['columns'], int), '"columns" setting must be an integer'
     assert 'starting_configuration' in self._configuration, 'Missing "starting_configuration" setting'
     # checking whether the 'starting_configuration' setting is valid will happen in patterns.py
-    if self._configuration['rows'] < 5:
-      logging.info('"rows" setting too small - resetting to 5')
-      self._configuration['rows'] = 5
-    if self._configuration['columns'] < 5:
-      logging.info('"columns" setting too small - resetting to 5')
-      self._configuration['columns'] = 5
+    if self._configuration['rows'] < 20:
+      logging.info('"rows" setting too small - resetting to 20')
+      self._configuration['rows'] = 20
+    if self._configuration['columns'] < 20:
+      logging.info('"columns" setting too small - resetting to 20')
+      self._configuration['columns'] = 20
 
   def get_configuration(self):
     return self._configuration
