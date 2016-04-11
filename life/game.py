@@ -10,7 +10,7 @@ class GameClass(object):
     configuration = ConfigurationClass().get_configuration()
     self._max_rows = configuration['rows']
     self._max_columns = configuration['columns']
-    self._grid = PatternsClass(configuration).get_configured_grid(configuration['starting_configuration'])
+    self._grid = PatternsClass(configuration).get_configured_grid(configuration['starting_configuration']).grid
     self._display = DisplayClass()
 
   def run(self):
