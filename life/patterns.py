@@ -12,7 +12,8 @@ class PatternsClass(object):
       'toad': self._set_toad,
       'pulsar': self._set_pulsar,
       'pentadecathlon': self._set_pentadecathlon,
-      'lightweight_spaceship': self._set_lightweight_spaceship
+      'lightweight_spaceship': self._set_lightweight_spaceship,
+      'gosper_glider_gun': self._set_gosper_glider_gun
     }
 
   def set_configured_grid(self, starting_configuration):
@@ -130,3 +131,42 @@ class PatternsClass(object):
     self.grid[4][3] = 1
     self.grid[4][4] = 1
     self.grid[4][5] = 1
+
+  def _set_gosper_glider_gun(self):
+    logging.debug('Setting initial grid configuration: gosper_glider_gun')
+    self.grid[1][25] = 1
+    self.grid[2][23] = 1
+    self.grid[2][25] = 1
+    self.grid[3][13] = 1
+    self.grid[3][14] = 1
+    self.grid[3][21] = 1
+    self.grid[3][22] = 1
+    self.grid[3][35] = 1
+    self.grid[3][36] = 1
+    self.grid[4][12] = 1
+    self.grid[4][16] = 1
+    self.grid[4][21] = 1
+    self.grid[4][22] = 1
+    self.grid[4][35] = 1
+    self.grid[4][36] = 1
+    self.grid[5][1] = 1
+    self.grid[5][2] = 1
+    self.grid[5][11] = 1
+    self.grid[5][17] = 1
+    self.grid[5][21] = 1
+    self.grid[5][22] = 1
+    self.grid[6][1] = 1
+    self.grid[6][2] = 1
+    self.grid[6][11] = 1
+    self.grid[6][15] = 1
+    self.grid[6][17] = 1
+    self.grid[6][18] = 1
+    self.grid[6][23] = 1
+    self.grid[6][25] = 1
+    self.grid[7][11] = 1
+    self.grid[7][17] = 1
+    self.grid[7][25] = 1
+    self.grid[8][12] = 1
+    self.grid[8][16] = 1
+    self.grid[9][13] = 1
+    self.grid[9][14] = 1
