@@ -17,7 +17,6 @@ class ConfigurationClass(object):  # pylint: disable=too-few-public-methods
     self._set_configuration()
 
   def _set_configuration(self):
-    """This method sets the class variable 'self._configuration.'"""
     self._configuration = self._parse_yaml()
     self._validate_configuration()
 
@@ -76,4 +75,5 @@ class ConfigurationClass(object):  # pylint: disable=too-few-public-methods
       self._configuration['delay'] = 1
 
   def get_configuration(self):
+    """This method returns the Life configuration."""
     return self._configuration
