@@ -70,7 +70,7 @@ range-builtin-not-iterating,suppressed-message,no-absolute-import,old-division,
 cmp-method,reload-builtin,zip-builtin-not-iterating,intern-builtin,unichr-builtin,
 reduce-builtin,standarderror-builtin,unicode-builtin,xrange-builtin,coerce-method,
 delslice-method,getslice-method,setslice-method,input-builtin,round-builtin,hex-method,
-nonzero-method,map-builtin-not-iterating,locally-disabled
+nonzero-method,map-builtin-not-iterating,locally-disabled,line-too-long
 
 
 [REPORTS]
