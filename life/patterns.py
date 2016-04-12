@@ -1,9 +1,22 @@
+"""This module sets the initial grid configuration."""
+
 import logging
 import numpy
 
 
-class PatternsClass(object):
+class PatternsClass(object):  # pylint: disable=R0903
+  """This class sets the initial grid configuration.
+
+  These starting configurations are based on those found on http://www.conwaylife.com/wiki/Main_Page.
+  """
   def __init__(self, configuration):
+    """This method instantiates the grid and defines the starting configuration functions.
+
+    The grid is initialized to a Numpy array of all zeroes, since that is the default 'dead' state.
+
+    Args:
+      configuration (dict): The configuration information parsed from the local configuration file.
+    """
     self.grid = numpy.zeros((configuration['rows'], configuration['columns']), dtype=numpy.int)
     self._config_functions = {
       'blinker': self._set_blinker,
@@ -17,6 +30,14 @@ class PatternsClass(object):
     }
 
   def set_configured_grid(self, starting_configuration):
+    """This method sets the starting 'live' cells in the 'dead' grid.
+
+    If the provided 'starting_configuration' variable is not a valid option,
+    the game is ended.
+
+    Args:
+      starting_configuration (str): The starting configuration string.
+    """
     if starting_configuration in self._config_functions:
       self._config_functions[starting_configuration]()
     else:
@@ -24,12 +45,14 @@ class PatternsClass(object):
       exit(1)
 
   def _set_blinker(self):
+    """This method sets the 'blinker' starting configuration"""
     logging.debug('Setting initial grid configuration: blinker')
     self.grid[2][1] = 1
     self.grid[2][2] = 1
     self.grid[2][3] = 1
 
   def _set_glider(self):
+    """This method sets the 'glider' starting configuration"""
     logging.debug('Setting initial grid configuration: glider')
     self.grid[1][2] = 1
     self.grid[2][3] = 1
@@ -38,6 +61,7 @@ class PatternsClass(object):
     self.grid[3][3] = 1
 
   def _set_r_pentomino(self):
+    """This method sets the 'r-pentomino' starting configuration"""
     logging.debug('Setting initial grid configuration: r-pentomino')
     self.grid[1][2] = 1
     self.grid[1][3] = 1
@@ -46,6 +70,7 @@ class PatternsClass(object):
     self.grid[3][2] = 1
 
   def _set_toad(self):
+    """This method sets the 'toad' starting configuration"""
     logging.debug('Setting initial grid configuration: toad')
     self.grid[1][2] = 1
     self.grid[1][3] = 1
@@ -55,6 +80,7 @@ class PatternsClass(object):
     self.grid[2][3] = 1
 
   def _set_pulsar(self):
+    """This method sets the 'pulsar' starting configuration"""
     logging.debug('Setting initial grid configuration: pulsar')
     self.grid[1][3] = 1
     self.grid[1][4] = 1
@@ -106,6 +132,7 @@ class PatternsClass(object):
     self.grid[13][11] = 1
 
   def _set_pentadecathlon(self):
+    """This method sets the 'pentadecathlon' starting configuration"""
     logging.debug('Setting initial grid configuration: pentadecathlon')
     self.grid[4][5] = 1
     self.grid[5][5] = 1
@@ -121,6 +148,7 @@ class PatternsClass(object):
     self.grid[13][5] = 1
 
   def _set_lightweight_spaceship(self):
+    """This method sets the 'lightweight spaceship' starting configuration"""
     logging.debug('Setting initial grid configuration: lightweight_spaceship')
     self.grid[1][1] = 1
     self.grid[1][4] = 1
@@ -133,6 +161,7 @@ class PatternsClass(object):
     self.grid[4][5] = 1
 
   def _set_gosper_glider_gun(self):
+    """This method sets the 'Gosper glider gun' starting configuration"""
     logging.debug('Setting initial grid configuration: gosper_glider_gun')
     self.grid[1][25] = 1
     self.grid[2][23] = 1

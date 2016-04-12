@@ -4,7 +4,7 @@ import logging
 from sys import stdout
 
 
-class LoggerClass(object):
+class LoggerClass(object):  # pylint: disable=R0903
   """This class creates a logger for formatted console logging."""
   @staticmethod
   def create_logger(log_level=logging.INFO):

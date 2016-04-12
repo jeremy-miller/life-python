@@ -7,7 +7,7 @@ from life.logger import LoggerClass
 from life.game import GameClass
 
 
-class MainClass(object):
+class MainClass(object):  # pylint: disable=R0903
   """This class runs the Life game."""
   def __init__(self):
     """This method initializes the Life game."""
