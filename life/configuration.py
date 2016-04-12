@@ -14,9 +14,11 @@ class ConfigurationClass(object):  # pylint: disable=R0903
   _CONFIG_FILENAME = 'config.yml'
 
   def __init__(self):
+    """This method sets the class instance configuration variable."""
     self._set_configuration()
 
   def _set_configuration(self):
+    """This method reads, parses, and validates the configuration file."""
     self._configuration = self._parse_yaml()
     self._validate_configuration()
 
