@@ -5,7 +5,7 @@ from os.path import dirname, join, realpath
 from yaml import load
 
 
-class ConfigurationClass(object):  # pylint: disable=too-few-public-methods
+class ConfigurationClass(object):  # pylint: disable=R0903
   """This class reads, parses, validates, and returns the Life configuration file.
 
   Attributes:
