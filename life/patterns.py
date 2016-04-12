@@ -33,7 +33,9 @@ class PatternsClass(object):  # pylint: disable=R0903
     """This method sets the starting 'live' cells in the 'dead' grid.
 
     If the provided 'starting_configuration' variable is not a valid option,
-    the game is ended.
+    the game is ended.  If the 'starting_configuration' variable is a valid option,
+    the corresponding function is executed to initialize the grid with the correct
+    starting configuration.
 
     Args:
       starting_configuration (str): The starting configuration string.
