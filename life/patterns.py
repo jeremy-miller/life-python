@@ -8,6 +8,9 @@ class PatternsClass(object):  # pylint: disable=R0903
   """This class sets the initial grid configuration.
 
   These starting configurations are based on those found on http://www.conwaylife.com/wiki/Main_Page.
+
+  Attributes:
+    grid (array): The initial grid configuration.
   """
   def __init__(self, configuration):
     """This method instantiates the grid and defines the starting configuration functions.
