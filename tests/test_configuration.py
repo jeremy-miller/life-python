@@ -1,7 +1,7 @@
 from life.configuration import ConfigurationClass
 
 
-def test_get_configuration(self):
+def test_get_configuration():
   test_configuration = {
     'rows': 40,
     'columns': 40,

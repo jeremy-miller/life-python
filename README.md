@@ -31,7 +31,6 @@ To run the Life game, execute the following command: ```docker run -it --rm jere
 
 # Tasks
 - Write tests
-    - display
     - game
     - logger
     - main

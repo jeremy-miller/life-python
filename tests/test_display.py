@@ -13,4 +13,4 @@ def grid():
 def test_show(grid, capsys):
   DisplayClass().show(grid)
   out, _ = capsys.readouterr()
-  assert out == ' . . .\n . 0 .\n . . .\n', 'grid display failed'
+  assert out == ' . . .\n . O .\n . . .\n\n', 'grid display failed'
