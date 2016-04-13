@@ -10,7 +10,7 @@ class PatternsClass(object):  # pylint: disable=R0903
   These starting configurations are based on those found on http://www.conwaylife.com/wiki/Main_Page.
 
   Attributes:
-    grid (array): The initial grid configuration.
+    grid (array): A Numpy two-dimensional array containing the initial configuration.
   """
   def __init__(self, configuration):
     """This method instantiates the grid and defines the starting configuration functions.

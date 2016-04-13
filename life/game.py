@@ -28,7 +28,7 @@ class GameClass(object):  # pylint: disable=R0903
     _max_rows (int): The number of rows in the grid.
     _max_columns (int): The number of columns in the grid.
     _delay (int): The number of seconds to sleep between iterations in the game.
-    _grid (array): The grid used to play the game.
+    _grid (array): A Numpy two-dimensional array used to play the game.
     _display (class): Instance of the DisplayClass
   """
   def __init__(self):
