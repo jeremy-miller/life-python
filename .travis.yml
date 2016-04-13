@@ -7,4 +7,4 @@ services:
 before_install:
   - docker build -t jeremymiller/life-python .
 script:
-  pep8 life && pylint life && python -m unittest discover
+  pep8 life && pylint life && py.test
