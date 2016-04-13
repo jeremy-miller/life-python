@@ -24,13 +24,18 @@ Before interacting with the Life game, the Docker environment must be setup firs
 
 ## Lint and Test
 To lint (using pep8 and pylint) the Life package, execute the following command: ```docker run jeremymiller/life-python pep8 life && pylint life```
-To run the Life unit tests, execute the following command: ```docker run jeremymiller/life-python python py.test```
+To run the Life unit tests, execute the following command: ```docker run jeremymiller/life-python py.test```
 
 ## Run
 To run the Life game, execute the following command: ```docker run jeremymiller/life-python python main.py```
 
 # Tasks
 - Write tests
+    - display
+    - game
+    - logger
+    - main
+    - patterns
 - Add Github badges
     - SonarQube Technical Debt
     - SonarQube Coverage
