@@ -4,10 +4,18 @@ import numpy
 
 
 class DisplayClass(object):  # pylint: disable=R0903
-  """This class displays the Life 'grid'."""
+  """This class displays the Life 'grid'.
+
+  No OpenGL or Matplotlib UI is used at the moment since this program is
+  being executed in a Docker container.  The 'curses' Python package also
+  has problems detecting the terminal when executed in a Docker container,
+  so it is not used either.
+  """
   @staticmethod
   def show(grid):
     """This function displays the Life 'grid' to the console.
+
+    Each iteration of the game will display a new grid in the console.
 
     This function loops through each index in the grid, checking if
     each cell is 'living' or not, and adding the appropriate symbol
