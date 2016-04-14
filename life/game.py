@@ -53,7 +53,7 @@ class GameClass(object):  # pylint: disable=R0903
     self._display.show(self._grid)
     if iterations:
       logging.debug('Running only %s iterations', iterations)
-      for i in iterations:
+      for _ in range(iterations):
         self._run_iteration()
     else:
       logging.debug('Running infinite iterations')
