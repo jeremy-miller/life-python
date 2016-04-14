@@ -54,11 +54,21 @@ class ConfigurationClass(object):  # pylint: disable=R0903
     that each value is the expected type.  It also verifies that certain settings have a minimum value.
     This method does not validate that the 'starting_configuration' setting contains one of the
     expected strings, since this validation is done within the 'patterns.py' file.
+    """
+    logging.debug('Validating configuration')
+    self._validate_setting_existence_and_type()
+    self._validate_values()
+
+  def _validate_setting_existence_and_type(self):
+    """This method validates the settings existence and type.
+
+    This method validates the expected settings exist in the configuration, as well as that the
+    values of the settings are the expected type.
 
     Raises:
       AssertionError: A validation error occurred.
     """
-    logging.debug('Validating configuration')
+    logging.debug('Validating setting existence and type')
     assert 'rows' in self._configuration, 'Missing "rows" setting'
     assert isinstance(self._configuration['rows'], int), '"rows" setting must be an integer'
     assert 'columns' in self._configuration, 'Missing "columns" setting'
@@ -66,6 +76,13 @@ class ConfigurationClass(object):  # pylint: disable=R0903
     assert 'starting_configuration' in self._configuration, 'Missing "starting_configuration" setting'
     assert 'delay' in self._configuration, 'Missing "delay" setting'
     assert isinstance(self._configuration['delay'], int), '"delay" setting must be an integer'
+
+  def _validate_values(self):
+    """This method validates the settings values.
+
+      This method validates the values of the settings meet minimum values for proper game function.
+      """
+    logging.debug('Validating setting values')
     if self._configuration['rows'] < 40:
       logging.info('"rows" setting too small - resetting to 40')
       self._configuration['rows'] = 40
