@@ -9,9 +9,6 @@ env:
     secure: EGQAQIsH+w6/03qQLo6NGAcjP87jCC+uQM4bQ0wG3lAZIDVtxJCHbkYUQCm0WdVn6pCmjXeUu3dhIq+v2L1FgoxoPxIdrwSQrZgd0p9P9SYOEifSxG9wYRkpuCz8ZCbGHUTFvEI/P4uab6AmP9TuHFLg7Lk8qKgQ8cg/zOJJ0FAHe+nF3qtVRjpo6WeCGdfp/nl4INCrhvwqyeG5xhgzRRZeeZKGpGRI6nNOk7vns6EAwvvR/Zoi5xg66J1+JupxdbIvugeg7kpc4AyQ0gq6hL5obYfWxbO/nN0S6xild5C87hbTv4p+MkXT+EDLf0HngMyonaKQzNuA53poJf+W8H/PJpv+vKLnmoRqgNuwiLjFAtzXgfQRJZyY+lnGljAl4X6kqqLr41oCJE1CRvvOUbjzuEA40VIW5mXGgm8KnZu/5gcERL6LNLVHAmD6ZnlV/Qc5g/TR8HwRQbrIJl6CImiUULoy9WNiAJgNR4xC6CA1cjv5KnW3X8895DuMP/t8jk/nG4k9D9TAE476IsvRt6fZ253hXqEQ7BkUWjB65eKgUBbBE+kRla886xS4dma4JDgWL/8l9qMrqA9aIXN5WFs5hk8NnZepKZZDOrnL7JC29LuyBD42nWaK1Jz1Q58brluC/H0LRpSkrAqdyDc3uMTZgOojVYSqlZlLg30AoPk=
 before_install:
   - docker build -t jeremymiller/life-python .
-install:
-  - docker run jeremymiller/life-python apt-get update -qq
-  - docker run jeremymiller/life-python apt-get install -y -qq coverage=4.0.3 codacy-coverage=1.2.8
 script:
   - pep8 life
   - pylint life
