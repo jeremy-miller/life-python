@@ -14,9 +14,6 @@ This game has been tested on Mac OS X El Capitan (10.11).
 # Usage
 To interact with the Life game, follow the steps below.
 
-### Configuration
-To configure the Life game, update the settings in the *life/config.yml* file.
-
 ### Setup
 Before interacting with the Life game, the Docker environment must be setup first.
 
@@ -24,6 +21,9 @@ Before interacting with the Life game, the Docker environment must be setup firs
 2. Start the *default* Docker virtual machine: ```docker-machine start default```
 3. Connect the terminal to the *default* Docker virtual machine: ```eval $(docker-machine env default)```
 4. Build the Docker image: ```docker build -t jeremymiller/life-python .```
+
+### Configuration
+To configure the Life game, update the settings in the *life/config.yml* file.
 
 ### Lint and Test
 To lint (using pep8 and pylint) the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
