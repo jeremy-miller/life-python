@@ -9,13 +9,15 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
 This implementation uses a Docker image to isolate the execution environment.  The Docker Python [base image](https://hub.docker.com/_/python/)
 used will automatically copy over the pip file and install dependencies, as well as copy over the source code to ```/usr/src/app```.
 
-This game has been tested on Mac OS X El Capitan (10.11).
-
 # Usage
-To interact with the Life game, follow the steps below.
+To interact with the Life game, follow the steps below.  The setup instructions are specific to a Mac OS X El Capitan (10.11) system.
+
+### Prerequisites
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker Machine](https://docs.docker.com/machine/)
 
 ### Setup
-Before interacting with the Life game, the Docker environment must be setup first.
+Before interacting with the Life game, the Docker environment must first be setup.
 
 1. Create a new Docker virtual machine (called *default*): ```docker-machine create default```
 2. Start the *default* Docker virtual machine: ```docker-machine start default```
@@ -26,6 +28,8 @@ Before interacting with the Life game, the Docker environment must be setup firs
 To configure the Life game, update the settings in the *life/config.yml* file.
 
 ### Lint and Test
+*NOTE: This game has only been tested on Mac OS X El Capitan (10.11).*
+
 To lint (using pep8 and pylint) the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
 
 To run the Life tests, execute the following command: ```docker run -it --rm jeremymiller/life-python py.test --capture=sys```
