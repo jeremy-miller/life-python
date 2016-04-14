@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/jeremy-miller/life-python.svg?branch=master)](https://travis-ci.org/jeremy-miller/life-python)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9022f54b73704803ac5993f4ed08a874)](https://www.codacy.com/app/jgmiller88/life-python)
 [![Code Climate](https://codeclimate.com/github/jeremy-miller/life-python/badges/gpa.svg)](https://codeclimate.com/github/jeremy-miller/life-python)
-[![Test Coverage](https://codeclimate.com/github/jeremy-miller/life-python/badges/coverage.svg)](https://codeclimate.com/github/jeremy-miller/life-python/coverage)
 [![Issue Count](https://codeclimate.com/github/jeremy-miller/life-python/badges/issue_count.svg)](https://codeclimate.com/github/jeremy-miller/life-python)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 
