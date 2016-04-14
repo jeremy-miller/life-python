@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/jeremy-miller/life-python.svg?branch=master)](https://travis-ci.org/jeremy-miller/life-python)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9022f54b73704803ac5993f4ed08a874)](https://www.codacy.com/app/jgmiller88/life-python)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 
 # Life
@@ -31,10 +32,5 @@ To run the Life game, execute the following command: ```docker run -it --rm jere
 
 # Tasks
 - Add Github badges
-    - SonarQube Technical Debt
-    - SonarQube Coverage
-    - Scrutinizer Code Quality
-    - Scrutinizer Coverage
     - Code Climate
     - Code Climate Coverage
-    - Codacy
