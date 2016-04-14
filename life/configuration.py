@@ -56,10 +56,10 @@ class ConfigurationClass(object):  # pylint: disable=R0903
     expected strings, since this validation is done within the 'patterns.py' file.
     """
     logging.debug('Validating configuration')
-    self._validate_setting_existence_and_type()
+    self._validate_settings_exist_type()
     self._validate_values()
 
-  def _validate_setting_existence_and_type(self):
+  def _validate_settings_exist_type(self):
     """This method validates the settings existence and type.
 
     This method validates the expected settings exist in the configuration, as well as that the
