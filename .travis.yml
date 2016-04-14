@@ -11,6 +11,5 @@ before_install:
   - docker build -t jeremymiller/life-python .
 script:
   pep8 life && pylint life && py.test --capture=sys
-after_script:
-  coverage xml
-  python-codacy-coverage -r coverage.xml
+after_success:
+  coverage xml && python-codacy-coverage -r coverage.xml
