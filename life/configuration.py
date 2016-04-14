@@ -66,10 +66,10 @@ class ConfigurationClass(object):  # pylint: disable=R0903
     assert 'starting_configuration' in self._configuration, 'Missing "starting_configuration" setting'
     assert 'delay' in self._configuration, 'Missing "delay" setting'
     assert isinstance(self._configuration['delay'], int), '"delay" setting must be an integer'
-    if self._configuration['rows'] < 40 and self._configuration['starting_configuration'] == 'blinker':
+    if self._configuration['rows'] < 40:
       logging.info('"rows" setting too small - resetting to 40')
       self._configuration['rows'] = 40
-    if self._configuration['columns'] < 40 and self._configuration['starting_configuration'] == 'blinker':
+    if self._configuration['columns'] < 40:
       logging.info('"columns" setting too small - resetting to 40')
       self._configuration['columns'] = 40
     if self._configuration['delay'] < 1:
