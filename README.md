@@ -30,9 +30,6 @@ To run the Lifed tests, execute the following command: ```docker run -it --rm je
 To run the Life game, execute the following command: ```docker run -it --rm jeremymiller/life-python python main.py```
 
 # Tasks
-- Write tests
-    - main
-    - patterns
 - Add Github badges
     - SonarQube Technical Debt
     - SonarQube Coverage
