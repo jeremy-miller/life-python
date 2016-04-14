@@ -42,7 +42,7 @@ class GameClass(object):  # pylint: disable=R0903
     self._grid = patterns.grid
     self._display = DisplayClass()
 
-  def run(self):
+  def run(self, iterations=None):
     """This method runs the game of Life.
 
     This method displays the initial grid configuration to the console,
@@ -51,17 +51,30 @@ class GameClass(object):  # pylint: disable=R0903
     period of time (to allow the user sufficient time to see the grid changes).
     """
     self._display.show(self._grid)
-    while True:
-      self._run_iteration()
-      self._display.show(self._grid)
-      sleep(self._delay)
+    if iterations:
+      logging.debug('Running only %s iterations', iterations)
+      for i in iterations:
+        self._run_iteration()
+    else:
+      logging.debug('Running infinite iterations')
+      while True:
+        self._run_iteration()
 
   def _run_iteration(self):
-    """This method runs one iteration of the game of Life.
-
-    This method creates a new grid during each iteration, to satisfy rule 2.
-    """
+    """This method runs one iteration of the game of Life."""
     logging.debug('Running new iteration')
+    self._apply_game_rules()
+    self._display.show(self._grid)
+    sleep(self._delay)
+
+  def _apply_game_rules(self):
+    """This method applies the game rules to the existing grid.
+
+    This method creates a new grid during each iteration (to satisfy rule 2).
+    Then for each cell in the old grid, it calculates the live neighbors and
+    updates the new grid.
+    """
+    logging.debug('')
     new_grid = numpy.copy(self._grid)
     for row, column in numpy.ndindex(self._grid.shape):  # ndindex returns every (row, column) pair in the array
       live_neighbors = self._get_live_neighbors(row, column)
