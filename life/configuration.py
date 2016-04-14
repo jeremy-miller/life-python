@@ -50,10 +50,6 @@ class ConfigurationClass(object):  # pylint: disable=R0903
     """This method validates the configuration values.
 
     This method provides validation of the values within the class variable self._configuration.
-    It validates that the expected keys are in the configuration dictionary, as well as
-    that each value is the expected type.  It also verifies that certain settings have a minimum value.
-    This method does not validate that the 'starting_configuration' setting contains one of the
-    expected strings, since this validation is done within the 'patterns.py' file.
     """
     logging.debug('Validating configuration')
     self._validate_settings_exist_type()
@@ -62,8 +58,10 @@ class ConfigurationClass(object):  # pylint: disable=R0903
   def _validate_settings_exist_type(self):
     """This method validates the settings existence and type.
 
-    This method validates the expected settings exist in the configuration, as well as that the
-    values of the settings are the expected type.
+    This method validates the expected keys exist in the configuration dictionary, as well as that the
+    values of the settings are the expected type.  This method does not validate that the
+    'starting_configuration' setting contains one of the expected strings, since this validation is done
+    within the 'patterns.py' file.
 
     Raises:
       AssertionError: A validation error occurred.
