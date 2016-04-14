@@ -28,7 +28,7 @@ To configure the Life game, update the settings in the *life/config.yml* file.
 ### Lint and Test
 To lint (using pep8 and pylint) the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
 
-To run the Lifed tests, execute the following command: ```docker run -it --rm jeremymiller/life-python py.test --capture=sys```
+To run the Life tests, execute the following command: ```docker run -it --rm jeremymiller/life-python py.test --capture=sys```
 
 ### Run
 To run the Life game, execute the following command: ```docker run -it --rm jeremymiller/life-python python main.py```
