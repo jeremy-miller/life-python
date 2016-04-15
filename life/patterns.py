@@ -61,6 +61,6 @@ class PatternsClass(object):  # pylint: disable=R0903
     if starting_configuration in self._config_functions:
       for index in self._config_functions[starting_configuration]:
         self.grid[index[0]][index[1]] = 1
-    else:
+    else:  # pragma: no cover
       logging.error('Invalid starting configuration: %s', starting_configuration)
       exit(1)
