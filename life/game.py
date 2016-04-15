@@ -47,9 +47,10 @@ class GameClass(object):  # pylint: disable=R0903
 
     This method displays the initial grid configuration to the console,
     then begins running iterations of the game, displaying the current
-    state of the grid after each iteration.  This method sleeps for a set
-    period of time between iterations (to allow the user sufficient time
-    to see the grid changes).
+    state of the grid after each iteration.  If not iterations are set,
+    the game will continue to run until the user exits the program.
+    This method sleeps for a set period of time between iterations
+    (to allow the user sufficient time to see the grid changes).
 
     Args:
       iterations (int): The number of iterations to run.
@@ -93,8 +94,8 @@ class GameClass(object):  # pylint: disable=R0903
     we only want to find living neighbors.  It also takes boundaries into account.
 
     Args:
-      row (int): The row index value.
-      column (int): The column index value.
+      row (int): The row index value of the current cell.
+      column (int): The column index value of the current cell.
 
     Returns:
       The number of living neighbors for this cell in this iteration of the grid.

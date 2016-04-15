@@ -20,6 +20,10 @@ class DisplayClass(object):  # pylint: disable=R0903
     This function loops through each index in the grid, checking if
     each cell is 'living' or 'dead', and adding the appropriate symbol
     to the grid output.
+
+    Args:
+      grid (array): A Numpy two-dimensional array which is the 'grid' to be
+        displayed in the console.
     """
     output = ''
     for index, value in numpy.ndenumerate(grid):  # example 'index' = (0,0), example 'value' = 1

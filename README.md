@@ -30,7 +30,7 @@ To configure the Life game, update the settings in the *life/config.yml* file.
 ### Lint and Test
 *NOTE: This game has only been tested on Mac OS X El Capitan (10.11).*
 
-To lint (using pep8 and pylint) the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
+To lint the Life package (using *pep8* and *pylint*), execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
 
 To run the Life tests, execute the following command: ```docker run -it --rm jeremymiller/life-python py.test --capture=sys```
 
