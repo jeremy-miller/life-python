@@ -14,7 +14,8 @@ class ConfigurationClass(object):  # pylint: disable=R0903
   _CONFIG_FILENAME = 'config.yml'
 
   def __init__(self):
-    """This method sets the class instance configuration variable."""
+    """This method sets the configuration filepath and class instance configuration variable."""
+    self._config_filepath = join(dirname(realpath(__file__)), self._CONFIG_FILENAME)
     self._set_configuration()
 
   def _set_configuration(self):
@@ -39,9 +40,8 @@ class ConfigurationClass(object):  # pylint: disable=R0903
       }
     """
     logging.info('Loading and parsing %s', self._CONFIG_FILENAME)
-    filepath = join(dirname(realpath(__file__)), self._CONFIG_FILENAME)
-    logging.debug('%s filepath: %s', self._CONFIG_FILENAME, filepath)
-    with open(filepath, 'r') as f:
+    logging.debug('%s filepath: %s', self._CONFIG_FILENAME, self._config_filepath)
+    with open(self._config_filepath, 'r') as f:
       parsed_yaml = load(f)
     logging.debug('Parsed yaml values: %s', parsed_yaml)
     return parsed_yaml

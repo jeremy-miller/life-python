@@ -1,0 +1,5 @@
+---
+rows: 5
+columns: 5
+starting_configuration: 'gosper_glider_gun'
+delay: 0
