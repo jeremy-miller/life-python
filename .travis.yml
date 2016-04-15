@@ -9,6 +9,6 @@ before_install:
 script:
   - pep8 life
   - pylint life
-  - py.test --capture=sys
+  - coverage run py.test --capture=sys
 after_success:
-  - coverage xml
+  - coveralls
