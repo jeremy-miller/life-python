@@ -6,16 +6,11 @@ from yaml import load
 
 
 class ConfigurationClass(object):  # pylint: disable=R0903
-  """This class reads, parses, validates, and returns the Life configuration file.
-
-  Attributes:
-    _CONFIG_FILENAME (string): The name of the configuration YAML file located in the local folder.
-  """
-  _CONFIG_FILENAME = 'config.yml'
-
-  def __init__(self):
+  """This class reads, parses, validates, and returns the Life configuration file."""
+  def __init__(self, config_filename=None, config_filepath=None):
     """This method sets the configuration filepath and class instance configuration variable."""
-    self._config_filepath = join(dirname(realpath(__file__)), self._CONFIG_FILENAME)
+    self._config_filename = config_filename if config_filename else 'config.yml'
+    self._config_filepath = config_filepath if config_filepath else join(dirname(realpath(__file__)), self._config_filename)
     self._set_configuration()
 
   def _set_configuration(self):
@@ -39,8 +34,8 @@ class ConfigurationClass(object):  # pylint: disable=R0903
         'delay': 1
       }
     """
-    logging.info('Loading and parsing %s', self._CONFIG_FILENAME)
-    logging.debug('%s filepath: %s', self._CONFIG_FILENAME, self._config_filepath)
+    logging.info('Loading and parsing %s', self._config_filename)
+    logging.debug('%s filepath: %s', self._config_filename, self._config_filepath)
     with open(self._config_filepath, 'r') as f:
       parsed_yaml = load(f)
     logging.debug('Parsed yaml values: %s', parsed_yaml)
