@@ -62,49 +62,16 @@ class ConfigurationClass(object):  # pylint: disable=R0903
     values of the settings are the expected type.  This method does not validate that the
     'starting_configuration' setting contains one of the expected strings, since this validation is done
     within the 'patterns.py' file.
+
+    Raises:
+      AssertionError: A validation error occurred.
     """
     logging.debug('Validating setting existence and type')
-    self._validate_rows()
-    self._validate_columns()
-    self._validate_starting_configuration()
-    self._validate_delay()
-
-  def _validate_rows(self):
-    """This method validates the 'rows' setting.
-
-    Raises:
-      AssertionError: A validation error occurred.
-    """
-    logging.debug('Validating "rows" setting')
     assert 'rows' in self._configuration, 'Missing "rows" setting'
     assert isinstance(self._configuration['rows'], int), '"rows" setting must be an integer'
-
-  def _validate_columns(self):
-    """This method validates the 'columns' setting.
-
-    Raises:
-      AssertionError: A validation error occurred.
-    """
-    logging.debug('Validating "columns" setting')
     assert 'columns' in self._configuration, 'Missing "columns" setting'
     assert isinstance(self._configuration['columns'], int), '"columns" setting must be an integer'
-
-  def _validate_starting_configuration(self):
-    """This method validates the 'starting_configuration' setting.
-
-    Raises:
-      AssertionError: A validation error occurred.
-    """
-    logging.debug('Validating "starting_configuration" setting')
     assert 'starting_configuration' in self._configuration, 'Missing "starting_configuration" setting'
-
-  def _validate_delay(self):
-    """This method validates the 'delay' setting.
-
-    Raises:
-      AssertionError: A validation error occurred.
-    """
-    logging.debug('Validating "delay" setting')
     assert 'delay' in self._configuration, 'Missing "delay" setting'
     assert isinstance(self._configuration['delay'], int), '"delay" setting must be an integer'
 
