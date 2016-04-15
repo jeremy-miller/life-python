@@ -55,7 +55,7 @@ class GameClass(object):  # pylint: disable=R0903
       logging.debug('Running only %s iterations', iterations)
       for _ in range(iterations):
         self._run_iteration()
-    else:
+    else:  # pragma: no cover
       logging.debug('Running infinite iterations')
       while True:
         self._run_iteration()
