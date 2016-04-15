@@ -9,6 +9,6 @@ before_install:
 script:
   - pep8 life
   - pylint life
-  - coverage run py.test --capture=sys
+  - py.test --cov=life --cov-report= --capture=sys
 after_success:
   - coveralls
