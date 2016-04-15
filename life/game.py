@@ -11,7 +11,7 @@ from life.patterns import PatternsClass
 class GameClass(object):  # pylint: disable=R0903
   """This class contains the Life game logic.
 
-  This class implements the functionality necessary to play a game of Conway's Game of Life.
+  This class implements the functionality necessary to play Conway's Game of Life.
   It creates the game board (the 'grid') with the user-defined dimensions and starting configuration,
   then runs iterations of the game, sleeping between iterations.
   It outputs the grid to the console after each iteration.
@@ -47,8 +47,12 @@ class GameClass(object):  # pylint: disable=R0903
 
     This method displays the initial grid configuration to the console,
     then begins running iterations of the game, displaying the current
-    state of the grid after each iteration, then sleeping for a set
-    period of time (to allow the user sufficient time to see the grid changes).
+    state of the grid after each iteration.  This method sleeps for a set
+    period of time between iterations (to allow the user sufficient time
+    to see the grid changes).
+
+    Args:
+      iterations (int): The number of iterations to run.
     """
     self._display.show(self._grid)
     if iterations:
@@ -64,7 +68,7 @@ class GameClass(object):  # pylint: disable=R0903
     """This method runs one iteration of the game of Life."""
     logging.debug('Running new iteration')
     self._apply_game_rules()
-    self._display.show(self._grid)
+    self._display.display(self._grid)
     sleep(self._delay)
 
   def _apply_game_rules(self):
@@ -85,15 +89,15 @@ class GameClass(object):  # pylint: disable=R0903
     """This method calculates the number of live neighbors for a give cell.
 
     This method uses Numpy's array slicing to 'slice' out 9 cells (the current cell and its 8 neighbors)
-    and sum their 'living' values.  It then removes the current cell's value from the final sum since
-    we only want to find living neighbors.  We also take boundaries into account.
+    and sum their 'living' values.  It then removes the current cell's value from the final sum, since
+    we only want to find living neighbors.  It also takes boundaries into account.
 
     Args:
       row (int): The row index value.
       column (int): The column index value.
 
     Returns:
-      The number of living neighbors in this iteration of the grid.
+      The number of living neighbors for this cell in this iteration of the grid.
     """
     logging.debug('Getting live neighbors')
     min_row = max(row - 1, 0)
@@ -105,11 +109,11 @@ class GameClass(object):  # pylint: disable=R0903
   def _update_grid(self, live_neighbors, new_grid, row, column):
     """This method updates the grid based on the number of living neighbors of a cell.
 
-    This method implements logic for rules 1, 3, and 4.
+    This method implements logic for rules 1, 3, and 4 of the game.
 
     Args:
       live_neighbors (int): The number of living neighbors for the cell located at (row, column) in the current grid.
-      new_grid (array): The new copy of the grid, which we will be updating in this method.
+      new_grid (array): The new copy of the Numpy grid, which will be updated in this method.
       row (int): The row index value of the current cell.
       column (int): The column index value of the current cell.
 

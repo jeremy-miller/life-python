@@ -1,4 +1,4 @@
-"""This module reads, parses, validates, and returns the Life configuration file."""
+"""This module reads, parses, validates, and returns the Life configuration settings."""
 
 import logging
 from os.path import dirname, join, realpath
@@ -6,23 +6,22 @@ from yaml import load
 
 
 class ConfigurationClass(object):  # pylint: disable=R0903
-  """This class reads, parses, validates, and returns the Life configuration file."""
+  """This class reads, parses, validates, and returns the Life configuration settings."""
   def __init__(self, config_filename=None, config_filepath=None):
-    """This method sets the configuration filepath and class instance configuration variable."""
+    """This method sets the configuration filename, filepath, and configuration."""
     self._config_filename = config_filename if config_filename else 'config.yml'
     self._config_filepath = config_filepath if config_filepath else join(dirname(realpath(__file__)), self._config_filename)
     self._set_configuration()
 
   def _set_configuration(self):
-    """This method reads, parses, and validates the configuration file."""
+    """This method reads, parses, and validates the configuration settings."""
     self._configuration = self._parse_yaml()
     self._validate_configuration()
 
   def _parse_yaml(self):
     """This method parses the Life configuration file.
 
-    This method loads and parses the YAML configuration file from the local folder.
-    The name of the configuration file is set in the class variable '_CONFIG_FILENAME'
+    This method loads and parses the YAML configuration file from the provided filepath.
 
     Returns:
       A dictionary containing the configuration file keys and values.  For example:

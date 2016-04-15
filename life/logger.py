@@ -11,7 +11,7 @@ class LoggerClass(object):  # pylint: disable=R0903
     """This function creates a logger for formatted console logging.
 
     Args:
-      log_level (int): The level at which to log.  Default is INFO.
+      log_level (int): The level at which to log.  Default is 20 (INFO).
 
     Returns:
       The configured logger.

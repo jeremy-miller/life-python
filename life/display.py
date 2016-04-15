@@ -6,23 +6,23 @@ import numpy
 class DisplayClass(object):  # pylint: disable=R0903
   """This class displays the Life 'grid'.
 
-  No OpenGL or Matplotlib UI is used at the moment since this program is
-  being executed in a Docker container.  The 'curses' Python package also
-  has problems detecting the terminal when executed in a Docker container,
-  so it is not used either.
+  No OpenGL or Matplotlib UI is used since this program is being executed
+  in a Docker container.  The 'curses' Python package is also not used
+  since it also has problems detecting the terminal when executed in a
+  Docker container.
   """
   @staticmethod
-  def show(grid):
+  def display(grid):
     """This function displays the Life 'grid' to the console.
 
     Each iteration of the game will display a new grid in the console.
 
     This function loops through each index in the grid, checking if
-    each cell is 'living' or not, and adding the appropriate symbol
+    each cell is 'living' or 'dead', and adding the appropriate symbol
     to the grid output.
     """
     output = ''
-    for index, value in numpy.ndenumerate(grid):  # example index = (0,0), example value = 1
+    for index, value in numpy.ndenumerate(grid):  # example 'index' = (0,0), example 'value' = 1
       if value:
         output += ' O'
       else:
