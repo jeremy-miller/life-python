@@ -140,7 +140,8 @@ def output():
 
 def test_run(grid, output, capsys):
   iterations = 1
-  game = GameClass()
+  starting_configuration_name = 'gosper_glider_gun'
+  game = GameClass(starting_configuration_name)
   game.run(iterations=iterations)
   assert numpy.array_equal(game._grid, grid), 'grids did not match'
   out, _ = capsys.readouterr()

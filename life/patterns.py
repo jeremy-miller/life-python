@@ -23,7 +23,7 @@ class PatternsClass(object):  # pylint: disable=R0903
       configuration (dict): The configuration information parsed from the local configuration file.
 
     Attributes:
-      grid (array): Numpy two-dimensional array which will be used as the game "board".
+      grid (array):             Numpy two-dimensional array which will be used as the game "board".
       _config_functions (dict): Listing of the cell indices which must be set as "living" for each
         of the possible starting configurations.
     """

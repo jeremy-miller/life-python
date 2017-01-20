@@ -25,20 +25,18 @@ class GameClass(object):  # pylint: disable=R0903
   A cell is considered dead if it has a value of 0.  A cell is considered alive if it has a value of 1.
 
   Attributes:
-    _max_rows (int): The number of rows in the grid.
+    _max_rows (int):    The number of rows in the grid.
     _max_columns (int): The number of columns in the grid.
-    _delay (int): The number of seconds to sleep between iterations in the game.
-    _grid (array): A Numpy two-dimensional array used to play the game.
-    _display (class): Instance of the DisplayClass
+    _grid (array):      A Numpy two-dimensional array used to play the game.
+    _display (class):   Instance of the DisplayClass
   """
-  def __init__(self):
+  def __init__(self, starting_configuration_name):
     """This method instantiates the variables and classes necessary to begin playing Life."""
-    configuration = ConfigurationClass().get_configuration()
+    configuration = ConfigurationClass(starting_configuration_name).get_configuration()
     self._max_rows = configuration['rows']
     self._max_columns = configuration['columns']
-    self._delay = configuration['delay']
     patterns = PatternsClass(configuration)
-    patterns.set_configured_grid(configuration['starting_configuration'])
+    patterns.set_configured_grid(starting_configuration_name)
     self._grid = patterns.grid
     self._display = DisplayClass()
 
@@ -70,7 +68,7 @@ class GameClass(object):  # pylint: disable=R0903
     logging.debug('Running new iteration')
     self._apply_game_rules()
     self._display.display(self._grid)
-    sleep(self._delay)
+    sleep(1)  # sleep for one second between iterations of the game
 
   def _apply_game_rules(self):
     """This method applies the game rules to the existing grid.
@@ -79,7 +77,7 @@ class GameClass(object):  # pylint: disable=R0903
     Then for each cell in the old grid, it calculates the live neighbors and
     updates the new grid.
     """
-    logging.debug('')
+    logging.debug('Applying game rules')
     new_grid = numpy.copy(self._grid)
     for row, column in numpy.ndindex(self._grid.shape):  # ndindex returns every (row, column) pair in the array
       live_neighbors = self._get_live_neighbors(row, column)
@@ -94,7 +92,7 @@ class GameClass(object):  # pylint: disable=R0903
     we only want to find living neighbors.  It also takes boundaries into account.
 
     Args:
-      row (int): The row index value of the current cell.
+      row (int):    The row index value of the current cell.
       column (int): The column index value of the current cell.
 
     Returns:
@@ -114,9 +112,9 @@ class GameClass(object):  # pylint: disable=R0903
 
     Args:
       live_neighbors (int): The number of living neighbors for the cell located at (row, column) in the current grid.
-      new_grid (array): The new copy of the Numpy grid, which will be updated in this method.
-      row (int): The row index value of the current cell.
-      column (int): The column index value of the current cell.
+      new_grid (array):     The new copy of the Numpy grid, which will be updated in this method.
+      row (int):            The row index value of the current cell.
+      column (int):         The column index value of the current cell.
 
     Returns:
       The new grid, updated with the latest living/dead state of the cell located at (row, column) in the old grid.

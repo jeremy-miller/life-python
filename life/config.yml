@@ -1,5 +1,0 @@
----
-rows: 40  # number of rows in the grid - integer value greater than or equal to 40
-columns: 40  # number of columns in the grid - integer value greater than or equal to 40
-starting_configuration: 'gosper_glider_gun'  # options are 'blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun'
-delay: 1  # number of seconds to wait between iterations - integer greater than or equal to 1

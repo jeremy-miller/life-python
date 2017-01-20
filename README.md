@@ -19,14 +19,16 @@ To interact with the Life game, follow the steps below.  The setup instructions 
 Before interacting with the Life game, the Docker container must be built: ```docker build -t jeremymiller/life-python .```
 
 ### Configuration
-To configure the Life game, modify the variables in the *main.py* file.
+To configure the Life game, modify the *starting_configuration_name* variable in *main.py*.
 
 ### Lint and Test
 *NOTE: This game has only been tested on Ubuntu 16.10*
 
-To lint the Life package (using *pep8* and *pylint*), execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
+To run *pep8* on the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life```
+
+To run *pylint* on the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pylint life```
 
 To run the Life tests, execute the following command: ```docker run -it --rm jeremymiller/life-python py.test --capture=sys```
 
 ### Run
-To run the Life game, execute the following command: ```docker run -it --rm jeremymiller/life-python python main.py```
+To run the Life game, execute the following command: ```docker run -it --rm jeremymiller/life-python python life/main.py```

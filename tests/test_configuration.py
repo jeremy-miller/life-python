@@ -1,24 +1,14 @@
-from os.path import dirname, join, realpath
 from life.configuration import ConfigurationClass
 
 
 def test_get_configuration():
-  test_configuration = {
-    'rows': 40,
-    'columns': 40,
-    'starting_configuration': 'gosper_glider_gun',
-    'delay': 1
-  }
-  assert ConfigurationClass().get_configuration() == test_configuration, 'invalid configuration received'
+  starting_configuration_name = 'gosper_glider_gun'
+  test_configuration = {'rows': 40, 'columns': 40}
+  assert ConfigurationClass(starting_configuration_name).get_configuration() == test_configuration, 'invalid configuration received'
 
 
-def test_get_invalid_configuration():
-  test_configuration = {
-    'rows': 40,
-    'columns': 40,
-    'starting_configuration': 'gosper_glider_gun',
-    'delay': 1
-  }
-  config_filepath = join(dirname(realpath(__file__)), 'test_config.yml')
-  config = ConfigurationClass(config_filename='test_config.yml', config_filepath=config_filepath)
-  assert config.get_configuration() == test_configuration, 'invalid configuration test failed'
+def test_get_invalid_starting_configuration_name():
+  starting_configuration_name = 'gosper_glider'
+  test_configuration = {'rows': 40, 'columns': 40}
+  config = ConfigurationClass(starting_configuration_name)
+  assert config.get_configuration() == test_configuration, 'invalid starting configuration name test failed'
