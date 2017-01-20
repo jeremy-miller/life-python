@@ -11,7 +11,9 @@ This implementation uses a Docker image to isolate the execution environment.  T
 used will automatically copy over the pip file and install dependencies, as well as copy over the source code to ```/usr/src/app```.
 
 # Usage
-To interact with the Life game, follow the steps below.  The setup instructions have been tested on an Ubuntu 16.10 system.
+To interact with the Life game, follow the steps below.
+
+*NOTE: This game has only been tested on an Ubuntu 16.10 system.*
 
 ### Prerequisites
 - [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/)
@@ -23,8 +25,6 @@ Before interacting with the Life game, the Docker container must be built: ```do
 To configure the Life game, modify the *starting_configuration_name* variable in *main.py*.
 
 ### Lint and Test
-*NOTE: This game has only been tested on Ubuntu 16.10*
-
 To run *pep8* on the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life```
 
 To run *pylint* on the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pylint life```
