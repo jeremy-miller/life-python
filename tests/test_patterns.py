@@ -5,12 +5,7 @@ from life.patterns import PatternsClass
 
 @pytest.fixture()
 def configuration():
-  return {
-    'rows': 5,
-    'columns': 5,
-    'starting_configuration': 'blinker',
-    'delay': 1
-  }
+  return {'rows': 5, 'columns': 5}
 
 
 @pytest.fixture()

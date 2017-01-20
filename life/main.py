@@ -13,10 +13,11 @@ class MainClass(object):  # pylint: disable=R0903
     """This method initializes the Life game.
 
     Attributes:
-      _starting_configuration_name (str): The starting configuration name chosen by the user. Options are: ptions are 'blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun'
+      _starting_configuration_name (str): The starting configuration name chosen by the user
+                                          Options are: 'blinker', 'glider', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun'
       _game (GameClass):                  Instance of the Life game.
     """
-    starting_configuration_name = 'blinker'  # options are 'blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun'
+    starting_configuration_name = 'gosper_glider_gun'
     self._game = GameClass(starting_configuration_name)
 
   def run(self):

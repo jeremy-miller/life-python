@@ -6,16 +6,15 @@ import logging
 class ConfigurationClass(object):  # pylint: disable=R0903
   """This class returns the Life configuration settings."""
 
-  STARTING_CONFIGURATION_NAMES = ['blinker', 'glider', 'r-pentomino', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun']
+  STARTING_CONFIGURATION_NAMES = ['blinker', 'glider', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun']
   CONFIGURATIONS = {
     'blinker': {'rows': 5, 'columns': 5},
     'glider': {'rows': 10, 'columns': 10},
-    'r-pentomino': {'rows': 5, 'columns': 5},
-    'toad': {'rows': 6, 'columns': 6},
-    'pulsar': {'rows': 17, 'columns': 17},
+    'toad': {'rows': 5, 'columns': 5},
+    'pulsar': {'rows': 16, 'columns': 16},
     'pentadecathlon': {'rows': 18, 'columns': 11},
-    'lightweight_spaceship': {'rows': 10, 'columns': 10},
-    'gosper_glider_gun': {'rows': 40, 'columns': 40}
+    'lightweight_spaceship': {'rows': 7, 'columns': 20},
+    'gosper_glider_gun': {'rows': 15, 'columns': 38}
   }
 
   def __init__(self, starting_configuration_name):
