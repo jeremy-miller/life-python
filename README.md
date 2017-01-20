@@ -10,25 +10,19 @@ This implementation uses a Docker image to isolate the execution environment.  T
 used will automatically copy over the pip file and install dependencies, as well as copy over the source code to ```/usr/src/app```.
 
 # Usage
-To interact with the Life game, follow the steps below.  The setup instructions are specific to a Mac OS X El Capitan (10.11) system.
+To interact with the Life game, follow the steps below.  The setup instructions have been tested on an Ubuntu 16.10 system.
 
 ### Prerequisites
-- [Docker](https://docs.docker.com/engine/installation/)
-- [Docker Machine](https://docs.docker.com/machine/)
+- [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/)
 
 ### Setup
-Before interacting with the Life game, the Docker environment must first be setup.
-
-1. Create a new Docker virtual machine (called *default*): ```docker-machine create default```
-2. Start the *default* Docker virtual machine: ```docker-machine start default```
-3. Connect the terminal to the *default* Docker virtual machine: ```eval $(docker-machine env default)```
-4. Build the Docker image: ```docker build -t jeremymiller/life-python .```
+Before interacting with the Life game, the Docker container must be built: ```docker build -t jeremymiller/life-python .```
 
 ### Configuration
-To configure the Life game, update the settings in the *life/config.yml* file.
+To configure the Life game, modify the variables in the *main.py* file.
 
 ### Lint and Test
-*NOTE: This game has only been tested on Mac OS X El Capitan (10.11).*
+*NOTE: This game has only been tested on Ubuntu 16.10*
 
 To lint the Life package (using *pep8* and *pylint*), execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life && pylint life```
 
