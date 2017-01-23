@@ -33,4 +33,6 @@ To run *pylint* on the Life package, execute the following command: ```docker ru
 To run the Life tests, execute the following command: ```docker run -it --rm jeremymiller/life-python py.test --capture=sys```
 
 ### Run
+When running the Life game, it will output the updated grid in the terminal.
+
 To run the Life game, execute the following command: ```docker run -it --rm jeremymiller/life-python python life/main.py```
