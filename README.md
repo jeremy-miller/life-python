@@ -10,7 +10,7 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
 This implementation uses a Docker image to isolate the execution environment.  The Docker Python [base image](https://hub.docker.com/_/python/)
 used will automatically copy over the pip file and install dependencies, as well as copy over the source code to ```/usr/src/app```.
 
-# Usage
+## Usage
 To interact with the Life game, follow the steps below.
 
 *NOTE: This game has only been tested on an Ubuntu 16.10 system.*
