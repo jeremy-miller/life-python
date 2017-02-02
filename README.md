@@ -22,7 +22,7 @@ To interact with the Life game, follow the steps below.
 Before interacting with the Life game, the Docker container must be built: ```docker build -t jeremymiller/life-python .```
 
 ### Configuration
-To configure the Life game, modify the *starting_configuration_name* variable in *main.py*.
+To configure the Life game, modify the ```starting_configuration_name``` variable in *main.py*.
 
 ### Lint
 To run *pep8* on the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life```
