@@ -28,7 +28,7 @@ class PatternsClass(object):  # pylint: disable=R0903
         of the possible starting configurations.
     """
     self.grid = numpy.zeros((configuration['rows'], configuration['columns']), dtype=numpy.int)
-    self._config_functions = {
+    self._live_cells = {
       'blinker': [(2, 1), (2, 2), (2, 3)],
       'glider': [(1, 2), (2, 3), (3, 1), (3, 2), (3, 3)],
       'toad': [(1, 2), (1, 3), (1, 4), (2, 1), (2, 2), (2, 3)],
@@ -62,8 +62,8 @@ class PatternsClass(object):  # pylint: disable=R0903
       starting_configuration (str): The starting configuration string.
     """
     logging.debug('Setting starting configuration for %s', starting_configuration)
-    if starting_configuration in self._config_functions:
-      for index in self._config_functions[starting_configuration]:
+    if starting_configuration in self._live_cells:
+      for index in self._live_cells[starting_configuration]:
         self.grid[index[0]][index[1]] = 1
     else:  # pragma: no cover
       logging.error('Invalid starting configuration: %s', starting_configuration)
