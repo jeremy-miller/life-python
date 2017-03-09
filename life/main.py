@@ -22,7 +22,7 @@ class MainClass(object):  # pylint: disable=R0903
 
   def run(self):
     """This method begins running the Life game."""
-    self._game.run(iterations=10)
+    self._game.run(iterations=5)
 
 
 if __name__ == '__main__':
