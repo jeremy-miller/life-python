@@ -17,7 +17,7 @@ class MainClass(object):  # pylint: disable=R0903
                                           Options are: 'blinker', 'glider', 'toad', 'pulsar', 'pentadecathlon', 'lightweight_spaceship', 'gosper_glider_gun'
       _game (GameClass):                  Instance of the Life game.
     """
-    starting_configuration_name = 'gosper_glider_gun'
+    starting_configuration_name = 'blinker'
     self._game = GameClass(starting_configuration_name)
 
   def run(self):
@@ -29,7 +29,7 @@ if __name__ == '__main__':
   try:
     LoggerClass().create_logger()
     logging.info("Starting Conway's Game of Life...")
-    MainClass().run()
+    MainClass().run(iterations=10)
   except KeyboardInterrupt:
     logging.info('Exiting...')
     exit()
