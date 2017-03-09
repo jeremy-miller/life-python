@@ -22,14 +22,14 @@ class MainClass(object):  # pylint: disable=R0903
 
   def run(self):
     """This method begins running the Life game."""
-    self._game.run()
+    self._game.run(iterations=10)
 
 
 if __name__ == '__main__':
   try:
     LoggerClass().create_logger()
     logging.info("Starting Conway's Game of Life...")
-    MainClass().run(iterations=10)
+    MainClass().run()
   except KeyboardInterrupt:
     logging.info('Exiting...')
     exit()
