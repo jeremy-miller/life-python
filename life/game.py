@@ -5,7 +5,6 @@ from time import sleep
 import numpy
 from life.configuration import ConfigurationClass
 from life.display import DisplayClass
-from life.patterns import PatternsClass
 
 
 class GameClass(object):  # pylint: disable=R0903
@@ -25,20 +24,19 @@ class GameClass(object):  # pylint: disable=R0903
   A cell is considered dead if it has a value of 0.  A cell is considered alive if it has a value of 1.
 
   Attributes:
-    _max_rows (int):    The number of rows in the grid.
-    _max_columns (int): The number of columns in the grid.
-    _grid (array):      A Numpy two-dimensional array used to play the game.
-    _display (class):   Instance of the DisplayClass
+    _max_rows (int):      The number of rows in the grid.
+    _max_columns (int):   The number of columns in the grid.
+    _grid (array):        A Numpy two-dimensional array used to play the game.
+    _display (class):     Instance of the DisplayClass
   """
   def __init__(self, starting_configuration_name):
     """This method instantiates the variables and classes necessary to begin playing Life."""
     configuration = ConfigurationClass(starting_configuration_name).get_configuration()
     self._max_rows = configuration['rows']
     self._max_columns = configuration['columns']
-    patterns = PatternsClass(configuration)
-    patterns.set_configured_grid(starting_configuration_name)
-    self._grid = patterns.grid
     self._display = DisplayClass()
+    self._grid = numpy.zeros((configuration['rows'], configuration['columns']), dtype=numpy.int)
+    self._set_configured_grid(configuration['live_cells'], starting_configuration_name)
 
   def run(self, iterations=None):
     """This method runs the game of Life.
@@ -126,3 +124,14 @@ class GameClass(object):  # pylint: disable=R0903
     elif live_neighbors == 3:  # rule 4
       new_grid[row][column] = 1
     return new_grid
+
+  def _set_configured_grid(self, live_cells, starting_configuration_name):
+    """This method sets the starting 'live' cells in the 'dead' grid.
+
+    Args:
+      configuration (dict):               Dictionary specifying configuration settings for the chosen configuration name.
+      starting_configuration_name (str):  The name of the starting Life game configuration.
+    """
+    logging.debug('Setting starting grid configuration for %s', starting_configuration_name)
+    for (row, column) in live_cells:
+      self._grid[row][column] = 1
