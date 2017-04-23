@@ -1,8 +1,8 @@
 """This module contains the Life game logic."""
 
 import logging
-from time import sleep
 import numpy
+from time import sleep
 from life.configuration import ConfigurationClass
 from life.display import DisplayClass
 
