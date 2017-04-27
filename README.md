@@ -15,8 +15,6 @@ used will automatically copy over the pip file and install dependencies, as well
 ## Usage
 To interact with the Life game, follow the steps below.
 
-*NOTE: This game has only been tested on an Ubuntu 16.10 system.*
-
 ### Prerequisites
 - [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/)
 
