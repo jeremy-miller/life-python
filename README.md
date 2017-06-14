@@ -16,7 +16,7 @@ used will automatically copy over the pip file and install dependencies, as well
 To interact with the Life game, follow the steps below.
 
 ### Prerequisites
-- [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/)
+- [Docker](https://docs.docker.com/engine/installation/)
 
 ### Setup
 Before interacting with the Life game, the Docker container must be built: ```docker build -t jeremymiller/life-python .```
