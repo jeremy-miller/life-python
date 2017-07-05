@@ -7,13 +7,11 @@
 
 # Life (in Python)
 Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
-This implementation uses a Docker container to isolate the execution environment.  The Docker Python [base image](https://hub.docker.com/_/python/)
-used will automatically copy over the pip file and install dependencies, as well as copy over the source code to ```/usr/src/app```.
 
 ![Usage](https://github.com/jeremy-miller/life-python/blob/master/usage.gif)
 
 ## Usage
-To interact with the Life game, follow the steps below.
+This implementation uses a Docker container to isolate the execution environment.
 
 ### Prerequisites
 - [Docker](https://docs.docker.com/engine/installation/)
