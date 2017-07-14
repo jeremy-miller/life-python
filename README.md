@@ -12,8 +12,8 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
 
 - [Usage](#usage)
   - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
   - [Configuration](#configuration)
+  - [Build](#build)
   - [Lint](#lint)
   - [Test](#test)
   - [Run](#run)
@@ -25,11 +25,11 @@ This implementation uses a Docker container to isolate the execution environment
 ### Prerequisites
 - [Docker](https://docs.docker.com/engine/installation/)
 
-### Setup
-Before interacting with the Life game, the Docker container must be built: ```docker build -t jeremymiller/life-python .```
-
 ### Configuration
 To configure the Life game, modify the ```starting_configuration_name``` variable in *main.py*.
+
+### Build
+Before interacting with the Life game, the Docker container must be built: ```docker build -t jeremymiller/life-python .```
 
 ### Lint
 To run *pep8* on the Life package, execute the following command: ```docker run -it --rm jeremymiller/life-python pep8 life```
