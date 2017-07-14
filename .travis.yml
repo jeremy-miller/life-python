@@ -9,4 +9,4 @@ script:
   - docker run -it --rm jeremymiller/life-python pylint life
   - docker run -it --rm jeremymiller/life-python py.test --capture=sys --cov=life --cov-report=
 after_success:
-  - coveralls
+  - docker run -it --rm jeremymiller/life-python coveralls
