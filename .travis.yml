@@ -1,8 +1,6 @@
 sudo: required
 services:
   - docker
-env:
-  - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN
 before_install:
   - docker build -t jeremymiller/life-python .
 script:
