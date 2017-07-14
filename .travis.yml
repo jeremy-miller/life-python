@@ -1,9 +1,12 @@
-language: python
-python:
-  - '3.5'
+language: generic
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t jeremymiller/life-python .
 script:
-  - pep8 life
-  - pylint life
-  - py.test --cov=life --cov-report= --capture=sys
+  - docker run -it --rm jeremymiller/life-python pep8 life
+  - docker run -it --rm jeremymiller/life-python pylint life
+  - docker run -it --rm jeremymiller/life-python py.test --capture=sys --cov=life --cov-report=
 after_success:
   - coveralls
