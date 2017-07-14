@@ -34,3 +34,6 @@ To run the Life tests, execute the following command: ```docker run -it --rm jer
 When running the Life game, it will output the updated grid in the terminal.
 
 To run the Life game, execute the following command: ```docker run -it --rm jeremymiller/life-python python life/main.py```
+
+## License
+[MIT](https://github.com/jeremy-miller/life-python/blob/master/LICENSE)
