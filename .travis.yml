@@ -8,4 +8,4 @@ script:
   - docker run -it --rm jeremymiller/life-python pylint life
   - docker run -it --rm jeremymiller/life-python py.test --capture=sys --cov=life --cov-report=
 after_success:
-  - docker run -it --rm jeremymiller/life-python coveralls
+  - docker run -it --rm jeremymiller/life-python COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN coveralls
