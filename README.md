@@ -10,6 +10,7 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
 
 ![Usage](https://github.com/jeremy-miller/life-python/blob/master/usage.gif)
 
+- [Motivation](#motivation)
 - [Usage](#usage)
   - [Prerequisites](#prerequisites)
   - [Configuration](#configuration)
@@ -18,6 +19,9 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
   - [Test](#test)
   - [Run](#run)
 - [License](#license)
+
+## Motivation
+I created this project to compare an object-oriented implemetation of Conway's Game of Life to functional implementations.
 
 ## Usage
 This implementation uses a Docker container to isolate the execution environment.
