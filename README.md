@@ -10,6 +10,15 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
 
 ![Usage](https://github.com/jeremy-miller/life-python/blob/master/usage.gif)
 
+- [Usage](#usage)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Configuration](#configuration)
+  - [Lint](#lint)
+  - [Test](#test)
+  - [Run](#run)
+- [License](#license)
+
 ## Usage
 This implementation uses a Docker container to isolate the execution environment.
 
