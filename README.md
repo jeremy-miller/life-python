@@ -10,15 +10,19 @@ Python implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/C
 
 ![Usage](https://github.com/jeremy-miller/life-python/blob/master/usage.gif)
 
-- [Motivation](#motivation)
-- [Usage](#usage)
-  - [Prerequisites](#prerequisites)
-  - [Configuration](#configuration)
-  - [Build](#build)
-  - [Lint](#lint)
-  - [Test](#test)
-  - [Run](#run)
-- [License](#license)
+<details>
+<summary><strong>Table of Contents</strong></summary>
+
+* [Motivation](#motivation)
+* [Usage](#usage)
+  + [Prerequisites](#prerequisites)
+  + [Configuration](#configuration)
+  + [Build](#build)
+  + [Lint](#lint)
+  + [Test](#test)
+  + [Run](#run)
+* [License](#license)
+</details>
 
 ## Motivation
 I created this project to compare an object-oriented implemetation of Conway's Game of Life to functional implementations.
